@@ -8,7 +8,7 @@
   {{#let (component @groupComponent) (component @optionsComponent) (component @optionComponent) as |Group Options Option|}}
     {{#each @options as |opt index|}}
       {{#if (ember-power-select-is-group opt)}}
-        <Group @group={{opt}} @select={{@select}} @extra={{@extra}}>
+        <Group @group={{opt}} @select={{@select}} @extra={{@extra}} @allowSelect={{@allowSelectingGroups}}>
           <Options
             @options={{opt.options}}
             @select={{@select}}

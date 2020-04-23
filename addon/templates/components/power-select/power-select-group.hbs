@@ -1,4 +1,14 @@
+{{#if @allowSelect}}
+  <Option
+    @option={{opt}}
+    @select={{select}}
+    @index="{{@groupIndex}}{{@index}}">
+    <span class="ember-power-select-group-name">{{@group.groupName}}</span>
+  </Option>
+{{/if}}
 <li class="ember-power-select-group" aria-disabled={{if @group.disabled "true"}} role="option">
-  <span class="ember-power-select-group-name">{{@group.groupName}}</span>
+  {{#unless @allowSelect}}
+    <span class="ember-power-select-group-name">{{@group.groupName}}</span>
+  {{/unless}}
   {{yield}}
 </li>
